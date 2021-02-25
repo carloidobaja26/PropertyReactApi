@@ -26,7 +26,7 @@ const db = knex({ //heroku
   client: 'pg',
   connection: {
     connectionString : process.env.DATABASE_URL,
-    ssl: true,
+    ssl: true
 
   }
 });
