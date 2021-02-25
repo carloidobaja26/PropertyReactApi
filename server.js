@@ -9,14 +9,25 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
-const db = knex({
+// const db = knex({ //localhost
+//   // Enter your own database information here based on what you created
+//   client: 'pg',
+//   connection: {
+//     host : '127.0.0.1',
+//     user : 'postgres',
+//     password : '1234',
+//     database : 'smartbrain'
+//   }
+// });
+
+
+const db = knex({ //heroku
   // Enter your own database information here based on what you created
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : '1234',
-    database : 'smartbrain'
+    connectionString : process.env.DATABASE_URL,
+    ssl: true,
+
   }
 });
 
